@@ -3,8 +3,10 @@ export default class Particula {
         this.pos = pos;
         this.size = 10;
         this.vel = createVector(random(-10, 10), random(-10, 10));
-
-        this.color = color (random(0, 255), random(0, 255), random(0, 255));
+this.red = random(255);
+this.green = random(255);
+this.blue = random(255);
+        this.color = color (255);
         this.alpha = 255;
         this.life = 100;
     }
@@ -21,7 +23,7 @@ export default class Particula {
         this.pos.add(this.vel);
         this.alpha = map(this.life, 100, 0, 255, 0);
         this.size = map(this.life, 100, 0, 50, 0);
-        this.color = color(255, this.alpha);
+        this.color = color(this.red, this.green, this.blue, this.alpha);
         this.life --;
     }
     isDead() {
